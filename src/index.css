@@ -1,9 +1,9 @@
 @import "tailwindcss";
 :root {
-    --primary-bg: #0d122b;
-    --secondary-bg: #141a3c;
-    --accent-blue: #00bfff;
-    --accent-cyan: #00e5ff;
+    --primary-bg: #08091B;
+    --secondary-bg: #10122D;
+    --accent-blue: #5BBBD4;
+    --accent-cyan: #3869D0;
     --text-primary: #ffffff;
     --text-secondary: #a9b3d0;
     --border-color: rgba(0, 229, 255, 0.2);
@@ -42,17 +42,18 @@ body {
         transform: translate(-50%, -50%);
     }
 }
-
 .btn-gradient {
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
 }
 
 .btn-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
 }
+
 
 .btn-outline {
     border: 1px solid var(--accent-cyan);
@@ -104,26 +105,27 @@ body {
     transform: translateX(100%);
 }
 
+/* .Default desktop ke liye */
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--accent-cyan) !important;
-    width: 40px;
-    height: 40px;
-    background: rgba(20, 26, 60, 0.5);
-    border-radius: 50%;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
+  color: var(--accent-cyan) !important;
+  width: 40px;
+  height: 40px;
+  background: rgba(20, 26, 60, 0.5);
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background: rgba(0, 229, 255, 0.2);
+  background: rgba(0, 229, 255, 0.2);
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 16px !important;
-    font-weight: bold;
+  font-size: 16px !important;
+  font-weight: bold;
 }
 .feature-timeline::before {
                     content: '';
@@ -185,3 +187,22 @@ body {
                         text-align: center !important;
                     }
                 }
+
+                /* Swiper navigation mobile me neeche center */
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 15px !important;
+    transform: translateY(0) !important;
+  }
+
+  .swiper-button-prev {
+    left: 40% !important;
+  }
+
+  .swiper-button-next {
+    right: 40% !important;
+  }
+}

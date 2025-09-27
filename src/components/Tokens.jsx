@@ -1,9 +1,7 @@
 import React from 'react';
 
-// Yah component maanta hai ki Tailwind CSS global roop se load kiya gaya hai.
 
 const Tokens = () => {
-  // ICO bonus ke liye data
   const bonusData = [
     { time: '1 day', bonus: '35%' },
     { time: '2 - 4 Days', bonus: '20%' },
@@ -17,10 +15,8 @@ const Tokens = () => {
         <h1 className='text-center text-4xl mb-10 font-bold '>Rounds of Sale of Tokens
 </h1>
         
-        {/* Cards ka Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
 
-          {/* PRE-SALE Card */}
           <div className="bg-[var(--primary-bg)] p-8 rounded-2xl border border-[var(--border-color)] flex flex-col items-center text-center shadow-lg">
             <div className="px-6 py-2 bg-[var(--accent-blue)] text-white font-bold rounded-lg mb-6">
               PRE-SALE
@@ -35,13 +31,12 @@ const Tokens = () => {
             </div>
           </div>
 
-          {/* ICO Card */}
           <div className="bg-[var(--primary-bg)] p-8 rounded-2xl border border-[var(--border-color)] flex flex-col items-center text-center shadow-lg">
             <div className="px-12 py-2 bg-white/10 text-white font-bold rounded-lg mb-6 border border-[var(--border-color)]">
               ICO
             </div>
             <p className="text-[var(--text-secondary)] text-sm mb-1">Target - to Raise USD 20,000,000</p>
-            <div className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-cyan)] w-full text-center py-3 px-6 rounded-lg shadow-[0_0_20px_rgba(0,229,255,0.4)] mb-8">
+            <div className="btn-gradient w-full text-center py-3 px-6 rounded-lg shadow-[0_0_20px_rgba(0,229,255,0.4)] mb-8">
               <span className="font-bold text-black text-lg">Price 1 BIT - $1.00</span>
             </div>
             
@@ -59,7 +54,6 @@ const Tokens = () => {
           </div>
         </div>
 
-        {/* Neeche ka Text */}
         <div className="max-w-4xl mx-auto mt-16 text-center">
             <p className="text-[var(--text-secondary)] leading-relaxed">
                 The sale of tokens It is a long established fact that a reader will be distracted by the <a href="#" className="text-[var(--accent-cyan)] hover:underline">readable content of a page</a> when looking at its layout. There are many variations of passages of Lorem Ipsum available. There are many variations of passages.

@@ -1,26 +1,21 @@
 import React from 'react';
-// Swiper React components aur modules ko import karein
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
-// Swiper styles ko import karein
 import 'swiper/css';
 import 'swiper/css/pagination';
+import SudDivider from './SudDivider';
 
-// Yah component maanta hai ki Tailwind CSS aur Font Awesome global roop se load kiye gaye hain.
 
-// Advisor card ke liye sub-component
 const AdvisorCard = ({ advisor }) => (
     <div className="bg-[var(--secondary-bg)] p-8 rounded-2xl border border-[var(--border-color)] text-center shadow-lg h-full flex flex-col">
         <div className="card-glow"></div>
         
-        {/* Advisor ki Image aur Details */}
         <div className="flex items-center justify-center md:justify-start md:text-left gap-5 mb-5">
             <img src={advisor.imageUrl} alt={advisor.name} className="w-20 h-20 rounded-full border-2 border-[var(--accent-cyan)] object-cover" />
             <div className="flex-grow">
                 <h3 className="text-xl font-bold text-white">{advisor.name}</h3>
                 <p className="text-[var(--text-secondary)] text-sm">{advisor.title}</p>
-                 {/* Social Media Icons */}
                 <div className="flex justify-center md:justify-start space-x-3 mt-2">
                     <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent-blue)] text-white hover:opacity-80 transition-opacity"><i className="fab fa-facebook-f"></i></a>
                     <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent-blue)] text-white hover:opacity-80 transition-opacity"><i className="fab fa-twitter"></i></a>
@@ -29,7 +24,6 @@ const AdvisorCard = ({ advisor }) => (
             </div>
         </div>
 
-        {/* Advisor ka Description */}
         <p className="text-[var(--text-secondary)] text-sm leading-relaxed text-center md:text-left">
             {advisor.description}
         </p>
@@ -38,7 +32,6 @@ const AdvisorCard = ({ advisor }) => (
 
 
 const Advisors = () => {
-    // Advisors ke liye data
     const advisorsData = [
         {
             name: 'Mason Liam',
@@ -79,8 +72,8 @@ const Advisors = () => {
     ];
 
     return (
-        <section className="py-24 bg-[var(--primary-bg)]">
-            <div className="container mx-auto px-6 md:px-12">
+        <section className="pt-24 bg-[var(--primary-bg)]">
+            <div className="container mx-auto px-6 md:px-12 pb-16">
                 <h2 className="text-4xl font-bold text-white text-center mb-16">Our Advisors</h2>
 
                 <Swiper
@@ -106,6 +99,7 @@ const Advisors = () => {
                     ))}
                 </Swiper>
             </div>
+            <SudDivider/>
         </section>
     );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import SudDivider from './SudDivider';
 
 // Yah component maanta hai ki Tailwind CSS aur Font Awesome global roop se load kiye gaye hain.
 
@@ -69,7 +70,7 @@ const MilestoneCard = ({ item, isLast }) => (
 
 const Roadmap = () => {
   return (
-    <section className="relative py-24 bg-[var(--primary-bg)] overflow-hidden">
+    <section className="relative pt-24 bg-[var(--primary-bg)] overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-8">
               Development of Bit Money Platform
@@ -109,6 +110,7 @@ const Roadmap = () => {
                 ))}
             </div>
         </div>
+        <SudDivider/>
     </section>
   );
 };

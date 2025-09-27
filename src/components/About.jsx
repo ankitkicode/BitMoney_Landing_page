@@ -1,15 +1,13 @@
 import React from 'react';
+import SudDivider from './SudDivider';
 
-// This component assumes Tailwind CSS is loaded globally.
 
 const About = () => {
     return (
-        <section className="py-20 bg-[var(--primary-bg)]">
+        <section className="pt-17 bg-[var(--primary-bg)] md:h-[70vh] h-fit  ">
             <div className="container mx-auto px-4">
-                {/* Grid for two-column layout, responsive for different screen sizes */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     
-                    {/* Left Column: Text content */}
                     <div>
                         <h2 className="text-4xl font-bold text-white mb-6">About The Project</h2>
                         <p className="text-[var(--text-secondary)] mb-4 leading-relaxed">
@@ -27,9 +25,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Illustration */}
                     <div className="flex justify-center">
-                        {/* Placeholder for the custom illustration shown in the reference image. */}
                         <img 
                             src="./images/about.png" 
                             className="rounded-lg shadow-2xl max-w-full h-auto" 
@@ -38,6 +34,8 @@ const About = () => {
                     </div>
                 </div>
             </div>
+        <SudDivider />
+
         </section>
     );
 };

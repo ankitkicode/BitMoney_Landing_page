@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Import Components
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -13,6 +12,7 @@ import Roadmap from './components/Roadmap';
 import Tokens from './components/Tokens';
 import Advisors from './components/Advisors';
 import News from './components/News';
+import LoanTimeline from './components/LoanTimeline';
 
 
 
@@ -27,7 +27,7 @@ function App() {
         <About />
         <Features />
         <Advantages />
-        <Steps />
+        <LoanTimeline />
         <Roadmap/>
         <Tokens/>
         <Advisors/>

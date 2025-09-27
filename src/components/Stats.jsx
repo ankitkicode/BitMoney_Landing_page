@@ -1,54 +1,84 @@
 import React from 'react';
-
-// This component assumes Tailwind CSS and Font Awesome are loaded globally.
+import WalletCard from './WalletCard';
+import SudDivider from './SudDivider';
 
 const Stats = () => {
-    // Data for the statistics cards
-    const statsData = [
-        { icon: 'fab fa-bitcoin', title: 'Bitcoin', value: '4.160651 BTC' },
-        { icon: 'fab fa-ethereum', title: 'Ethereum', value: '3.245000 ETH' },
-        { icon: 'fas fa-dollar-sign', title: 'Dollar (USD)', value: '58634.000 USD' },
-        { icon: 'fas fa-wallet', title: 'Total USD', value: '111969.062 USD' },
-        { icon: 'fas fa-tags', title: 'Token Sale', value: '346636.775' },
-    ];
-    
-    return (
-        <section className="py-16 bg-[var(--primary-bg)] -mt-1 relative">
-            <div className="container mx-auto px-4">
-                {/* Grid layout for the cards, responsive for different screen sizes */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    {statsData.map((stat, index) => (
-                        <div 
-                            key={index} 
-                            className="p-6 card-bg flex flex-col justify-start transform hover:-translate-y-2 transition-transform duration-300"
-                        >
-                            {/* Glow line at top */}
-                            <div className="card-glow"></div>
-                             
-                            {/* Top section: Icon + Title */}
-                            <div className="flex items-center mb-6">
-                                <div className="w-11 h-11 rounded-full bg-[var(--accent-cyan)]/10 flex-shrink-0 flex items-center justify-center mr-4">
-                                    <i className={`${stat.icon} text-xl text-[var(--accent-cyan)]`}></i>
-                                </div>
-                                <h3 className="text-base font-bold text-white/90">{stat.title}</h3>
-                            </div>
+  const cardData = [
+    {
+      name: 'Bitcoin',
+      value: '4.160651',
+      symbol: 'BTC',
+       imageSrc: '/icons/bit.png',
 
-                            {/* Bottom section: Value Button */}
-                            <div className="w-full text-center cursor-pointer ">
-                                <button 
-                                    className="text-sm font-bold text-white px-4 py-3 rounded-full btn-gradient inline-block w-full
-                                    transform transition duration-300 ease-in-out
-                                    hover:scale-110 hover:shadow-[0_0_20px_rgba(0,238,255,0.7)]"
-                                >
-                                    {stat.value}
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+      gradientFrom: 'from-yellow-500',
+      gradientTo: 'to-orange-500',
+    },
+    {
+      name: 'Ethereum',
+      value: '3.245000',
+      symbol: 'ETH',
+     
+      imageSrc: '/icons/eth.png',
+    
+      gradientFrom: 'from-blue-500',
+      gradientTo: 'to-indigo-500',
+    },
+    {
+      name: 'USD',
+      value: '58634.00',
+      symbol: 'USD',
+      imageSrc: '/icons/dller.png',
+      gradientFrom: 'from-green-400',
+      gradientTo: 'to-teal-500',
+    },
+    {
+      name: 'Total USD',
+      value: '346636.775',
+      symbol: 'USD',
+    //   icon: (
+    //     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    //       <circle cx="20" cy="20" r="20" fill="none" stroke="#F7931A" strokeWidth="2" />
+    //       <circle cx="20" cy="20" r="16" fill="#F7931A" />
+    //       <path
+    //         d="M25.32 25.03c.53-.54.84-1.35.79-2.16v-9.4c0-.85-.3-1.66-.84-2.2-.53-.53-1.32-.82-2.12-.82h-6.9l-.32-2.9h9.7v-3.06h-10.6l-.57 5.17h6.75l.32 2.9h-7.06l-.57 5.17h7.7c.8 0 1.58-.3 2.12-.84z"
+    //         fill="white"
+    //       />
+    //     </svg>
+    //   ),
+      imageSrc: '/icons/usdt.png',
+
+      gradientFrom: 'from-purple-500',
+      gradientTo: 'to-pink-500',
+    },
+     {
+      name: 'Token Sale',
+      value: '346636.775',
+      symbol: '',
+        imageSrc: '/icons/token.png',
+      gradientFrom: 'from-purple-500',
+      gradientTo: 'to-pink-500',
+    },
+    
+  ];
+
+  return (
+   <section className="py-16 bg-[var(--primary-bg)] -mt-1 relative">
+      <div className="w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {cardData.map((card, index) => (
+            <WalletCard
+              key={index}
+              name={card.name}
+              value={card.value}
+              symbol={card.symbol}
+              icon={card.icon}
+              imageSrc={card.imageSrc}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Stats;
